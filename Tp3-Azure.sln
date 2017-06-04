@@ -18,6 +18,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tp3-Azure.Domain", "Tp3-Azure.Domain\Tp3-Azure.Domain.csproj", "{F2C8A222-F8D6-49F4-857A-23587023B9F5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tp3-Azure.Client", "Tp3-Azure.Client\Tp3-Azure.Client.csproj", "{A84510E9-9AB8-4C18-A70A-1AFCA9D45AAB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E1456F46-4370-4F2E-8BA8-F001596E756C} = {E1456F46-4370-4F2E-8BA8-F001596E756C}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
