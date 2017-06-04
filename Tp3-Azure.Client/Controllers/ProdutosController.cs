@@ -162,6 +162,8 @@ namespace Tp3_Azure.Client.Controllers
                     Preco = item.Preco,
                     Quantidade = item.Quantidade
                 };
+                TempData["deleteid"] = produto.ProdutoId;
+                TempData.Keep();
                 return View(produto);
             }
         }
@@ -169,9 +171,10 @@ namespace Tp3_Azure.Client.Controllers
         // POST: Produtos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(Guid id)
+        public ActionResult DeleteConfirmed()
         {
-            using(var proxy = new ServiceReference1.GerenciamentoDeProdutoServiceClient())
+            Guid id = (Guid)TempData["deleteid"];
+            using (var proxy = new ServiceReference1.GerenciamentoDeProdutoServiceClient())
             {
                 proxy.Delete(id);
             }
